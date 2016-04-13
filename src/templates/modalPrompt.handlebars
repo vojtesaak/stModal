@@ -1,0 +1,23 @@
+
+<modal>
+
+    <prompt-modal>
+
+        {{#if title}}
+            <div class="modal-header">
+                <h4 class="modal-title">{{title}}</h4>
+            </div>
+        {{/if}}
+
+        <div class="modal-body">
+            {{message}}
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn primary small" can-click="yes">Yes</button>
+            <button type="button" class="btn secondary small" can-click="no">No</button>
+        </div>
+
+    </prompt-modal>
+
+</modal>
