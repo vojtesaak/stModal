@@ -1,16 +1,32 @@
 
 'use strict';
 
-var basePath = '../..';
 var absolutePath = System.baseURL.replace(/\/$/, '');
 
-System.paths.can = absolutePath + '/node_modules/can/dist/amd/*.js';
-System.paths.jquery = absolutePath + '/node_modules/jquery/dist/jquery.js';
-System.paths.stloader = absolutePath + '/node_modules/stloader/src/js/index.js';
-System.paths['stmodal/*'] = absolutePath + '/node_modules/stmodal/src/*.js';
-System.paths['stform/*'] = absolutePath + '/node_modules/stform/*.js';
-System.paths['can/*'] = absolutePath + '/node_modules/can/dist/amd/can/*.js';
-System.paths['lodash/*'] = absolutePath + '/node_modules/lodash/*.js';
-System.paths['can/view/*'] = absolutePath + '/node_modules/can/dist/amd/can/view/*.js';
-System.paths['bootstrap-js/*'] = absolutePath + '/node_modules/bootstrap/js/*.js';
+
+System.config({
+
+    defaultJSExtensions: true,
+
+    paths: {
+        can: absolutePath + '/node_modules/can/dist/amd/*.js',
+        jquery: absolutePath + '/node_modules/jquery/dist/jquery.js',
+        'stmodal/*': absolutePath + '/node_modules/stmodal/src/*.js',
+        'stform/*': absolutePath + '/node_modules/stform/*.js',
+        stloader: absolutePath + '/node_modules/stloader/src/js/index.js',
+        'can/*': absolutePath + '/node_modules/can/dist/amd/can/*.js',
+        'lodash/*': absolutePath + '/node_modules/lodash/*.js',
+        'can/view/*': absolutePath + '/node_modules/can/dist/amd/can/view/*.js',
+        'bootstrap-js/*': absolutePath + '/node_modules/bootstrap/js/*.js'
+    },
+
+    lessOptions: {
+        paths: [
+            '/node_modules/bootstrap/less/'
+        ]
+    },
+    packageConfigPaths: ['./node_modules/*/package.json']
+    //bundlesPath: absolutePath + '/public/dist'
+});
+
 

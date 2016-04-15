@@ -7,10 +7,7 @@
     "url": "https://github.com/vojtesaak/stModal.git"
   },
   "system": {
-    "npmAlgorithm": "flat",
-    "directories" : {
-      "lib" : "src"
-    }
+    "npmAlgorithm": "flat"
   },
   "scripts": {},
   "dependencies": {
