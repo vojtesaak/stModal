@@ -65,7 +65,7 @@ Modal.createErrorModal = function (err, messages) {
         }
     }
 
-    return new Modal('/templates/modalMessage', {
+    return new Modal('../templates/modalMessage', {
         title: 'Something went wrong',
         message: message
     });
