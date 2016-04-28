@@ -5,13 +5,15 @@
 'use strict';
 
 var can = require('can');
-var templates = require('./utils/templates');
+//var templates = require('./utils/templates');
+
+var templates = require('./templates');
 
 
 can.Component.extend({
 
     tag: 'modal',
 
-    template: templates.get('../templates/modal')
+    template: templates.getTemplate('modal')
 
 });

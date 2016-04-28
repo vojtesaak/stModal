@@ -10,7 +10,8 @@ require('./js/modal');
 require('bootstrap-js/modal');
 require('./less/main.less!');
 
-var templates = require('./js/utils/templates');
+//var templates = require('./js/utils/templates');
+var templates = require('./js/templates');
 
 
 // a little evil global listener for multiple modals - todo refactor this
@@ -65,7 +66,7 @@ Modal.createErrorModal = function (err, messages) {
         }
     }
 
-    return new Modal('../templates/modalMessage', {
+    return new Modal(templates.getTemplate('modalMessage'), {
         title: 'Something went wrong',
         message: message
     });
@@ -84,7 +85,7 @@ Modal.prototype = {
 
         var deferred = can.Deferred();
 
-        var dialogTemplate = templates.get(this._templateUrl);
+        var dialogTemplate = templates.getTemplate(this._templateUrl);
 
         can.$('body').prepend(dialogTemplate(this._data || {}, this._helpers || {}));
 
