@@ -10,7 +10,7 @@ require('./js/modal');
 require('bootstrap-js/modal');
 require('./less/main.less!');
 
-var templates = require('./utils/templates');
+var templates = require('./js/utils/templates');
 
 
 // a little evil global listener for multiple modals - todo refactor this
