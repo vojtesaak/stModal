@@ -6,9 +6,9 @@
 
 var can = require('can');
 
-require('./modal');
+require('./js/modal');
 require('bootstrap-js/modal');
-require('../less/main.less!');
+require('./less/main.less!');
 
 var templates = require('./utils/templates');
 
