@@ -3,7 +3,7 @@
 var templates = {
 
     getTemplate: function(template) {
-        return template + '.handlebars';
+        return template || 'node_modules/stmodal/src/templates/' + template;
     }
 };
 
