@@ -3,8 +3,8 @@
 var templates = {
 
     getTemplate: function(template) {
-        return template + '.handlebars'
+        return template + '.handlebars';
     }
 };
 
-exports.module = templates;
+module.exports = templates;
