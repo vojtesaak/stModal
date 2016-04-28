@@ -27,7 +27,7 @@ var templates = {
         }
 
         var templateAddress = this._staticAddress + '/'+ templateName + '.handlebars';
-
+        console.log(templateAddress);
         return function(data, helpers) {
 
             var template = can.view({
