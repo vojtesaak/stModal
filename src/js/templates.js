@@ -3,7 +3,7 @@
 var templates = {
 
     getTemplate: function(template) {
-        return template || 'node_modules/stmodal/src/templates/' + template;
+        return 'node_modules/stmodal/src/templates/' + template;
     }
 };
 
