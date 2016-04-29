@@ -66,7 +66,7 @@ Modal.createErrorModal = function (err, messages) {
         }
     }
 
-    return new Modal(templates.getTemplate('modalMessage'), {
+    return new Modal(templates.get('modalMessage'), {
         title: 'Something went wrong',
         message: message
     });
@@ -85,7 +85,7 @@ Modal.prototype = {
 
         var deferred = can.Deferred();
 
-        var dialogTemplate = templates.getTemplate(this._templateUrl);
+        var dialogTemplate = templates.get(this._templateUrl);
 
         can.$('body').prepend(dialogTemplate(this._data || {}, this._helpers || {}));
 
