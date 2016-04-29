@@ -28,14 +28,14 @@ var templates = {
         }
 
         var templateAddress = '/'+ templateName + '.handlebars';
-        console.log(templateAddress);
+
         return function(data, helpers) {
 
             var template = self._getTemplate(templateAddress);
 
             if (typeof template === 'undefined') {
 
-                var defTemplate = self._getTemplate('./node_modules/stmodal/src/templates/' + templateAddress);
+                var defTemplate = self._getTemplate(window.location.origin + '/node_modules/stmodal/src/templates' + templateAddress);
                 if (typeof defTemplate === 'undefined') {
                     return defTemplate(data, helpers);
                 }
