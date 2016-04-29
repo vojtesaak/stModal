@@ -12,6 +12,6 @@ can.Component.extend({
 
     tag: 'modal',
 
-    template: templates.get('modal')
+    template: templates.get('../src/templates/modal')
 
 });
