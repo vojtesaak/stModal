@@ -36,7 +36,7 @@ var templates = {
             if (typeof template === 'undefined') {
 
                 var defTemplate = self._getTemplate(window.location.origin + '/node_modules/stmodal/src/templates' + templateAddress);
-                if (typeof defTemplate === 'undefined') {
+                if (typeof defTemplate !== 'undefined') {
                     return defTemplate(data, helpers);
                 }
 
