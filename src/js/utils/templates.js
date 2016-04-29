@@ -21,24 +21,20 @@ var templates = {
     get: function (templateName, templateCb) {
 
 
-        var self = this;
 
         if (templateCb && typeof templateCb === 'function') {
             return templateCb(templateName);
         }
 
-        var templateAddress = '/'+ templateName + '.handlebars';
-
         return function(data, helpers) {
 
-            var template = self._getTemplate(templateAddress);
+            var template = can.view({
+                url: templateName + '.handlebars',
+                engine: 'stache'
+            });
 
             if (typeof template === 'undefined') {
 
-                var defTemplate = self._getTemplate(window.location.origin + '/node_modules/stmodal/src/templates' + templateAddress);
-                if (typeof defTemplate !== 'undefined') {
-                    return defTemplate(data, helpers);
-                }
 
                 alert('Template not loaded');
                 return can.view(can.view.stache('templateNotFound', 'Template not loaded'))();
@@ -46,13 +42,6 @@ var templates = {
                 return template(data, helpers);
             }
         };
-    },
-
-    _getTemplate: function (templateAddress) {
-        return can.view({
-            url: templateAddress,
-            engine: 'stache'
-        });
     }
 
 };
